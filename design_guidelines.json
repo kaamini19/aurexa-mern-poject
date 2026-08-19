@@ -1,0 +1,179 @@
+{
+  "project_name": "AUREXA - Private Exhibition & Auction",
+  "theme": "Luxury Editorial / Private Art Gallery",
+  "emotional_tone": "Exclusive, sophisticated, mysterious, architectural, timeless, extremely premium.",
+  "colors": {
+    "primary_navy": "#0B1728",
+    "dark_navy": "#07101D",
+    "warm_beige": "#D8C7AE",
+    "ivory": "#F3EDE2",
+    "champagne_accent": "#B99A68",
+    "muted_bronze": "#806744",
+    "charcoal": "#24262A",
+    "rules": [
+      "NO bright yellow gold or neon. Champagne/bronze only as subtle accent.",
+      "NO excessive gradients. Use solid colors. Subtle textures only (grain, noise, linen).",
+      "NO glassmorphism. Use solid panel transitions.",
+      "Navy and Ivory are dominant background colors. Transition between them using dark navy sweeping panels."
+    ]
+  },
+  "typography": {
+    "heading_font": "Cormorant Garamond",
+    "body_font": "Outfit",
+    "rules": [
+      "Headings (Cormorant Garamond): Use luxury serif, tight letter spacing, high-contrast, dramatic scaling (text-5xl to text-7xl+).",
+      "Body/Nav/Metadata (Outfit): Clean, modern, widely spaced if uppercase (tracking-[0.2em]), legible.",
+      "Hierarchy: Editorial style. Do not make everything bold. Rely on font-light or font-normal for large elegant serif."
+    ],
+    "installation": "Add Google Fonts link for 'Cormorant Garamond' and 'Outfit' in index.html."
+  },
+  "components_and_layout": {
+    "ui_primitives": "Lucide React (icons), strict custom HTML/Tailwind for layout (avoid generic Shadcn cards, prioritize pure raw grid/flex).",
+    "rules": [
+      "NO generic SaaS UI patterns. NO excessive rounded cards (use sharp edges or max 2px radius).",
+      "Generous whitespace. Think of paddings as py-24, py-32.",
+      "Use horizontal-scroll collections with numbering (01/08).",
+      "Navigation: Minimalist luxury nav. 'AUREXA' on left, links in center/left, 'ACCESS' on right. Full-screen mobile menu."
+    ]
+  },
+  "animations": {
+    "libraries": "framer-motion, gsap (ScrollTrigger), @studio-freight/lenis",
+    "rules": [
+      "Must use Lenis for smooth momentum scrolling.",
+      "Signature Animations: Unveiling curtain panels, diagonal/vertical wipes, staggered opacity/translateY.",
+      "Use GSAP ScrollTrigger for pinned horizontal-scroll gallery.",
+      "Hover states: Image scale (1.03x), subtle champagne borders, custom circular 'VIEW' cursor.",
+      "Performant: animate ONLY transform, opacity, and clip-path.",
+      "NO 3D, NO Three.js, NO WebGL."
+    ]
+  },
+  "sections_guide": [
+    {
+      "name": "01 Hero",
+      "bg": "dark_navy",
+      "details": "Full viewport. Staggered line-by-line typography mask reveal. Navy panels slide apart (curtain unveil) to reveal a central artwork piece. Champagne light sweep on load. CTAs: ENTER THE COLLECTION / REQUEST INVITATION."
+    },
+    {
+      "name": "02 The Collection",
+      "bg": "ivory",
+      "details": "Horizontal scroll (GSAP). Large editorial photography, 01/08 numbering. Categories listed gracefully. No conventional card grids."
+    },
+    {
+      "name": "03 Featured Lots",
+      "bg": "dark_navy",
+      "details": "4-6 lots. Title SELECTED LOTS. Hover: image scales ~1.03, subtle champagne border. Use custom circular 'VIEW' cursor."
+    },
+    {
+      "name": "04 Auction",
+      "bg": "primary_navy",
+      "details": "Elegant grid/table for lot preview. Minimal countdown timer (AUREXA II — XX DAYS...)."
+    },
+    {
+      "name": "05 AUREXA I",
+      "bg": "dark_navy",
+      "details": "Previous edition. Overlapping images, staggered sequential reveals, cinematic editorial gallery."
+    },
+    {
+      "name": "06 AUREXA II",
+      "bg": "ivory",
+      "details": "Large typography layout. Dramatic image reveal. CTA REQUEST INVITATION."
+    },
+    {
+      "name": "07 The Experience",
+      "bg": "warm_beige",
+      "details": "Four text-heavy editorial sections. Emphasize curation, rarity, provenance."
+    },
+    {
+      "name": "08 Partners",
+      "bg": "ivory",
+      "details": "Generous spacing. Tiered (Presenting, Luxury, Cultural). NO dense logo walls. Elegant staggered fade-ins."
+    },
+    {
+      "name": "09 Journal",
+      "bg": "ivory",
+      "details": "Editorial article grid. Large serif titles, clean layout."
+    },
+    {
+      "name": "10 Access",
+      "bg": "dark_navy",
+      "details": "Invitation-only gate. Form 1: Enter Invitation Code (demo mode). Form 2: Request Invitation. Minimal inputs (border-bottom only, no heavy boxes)."
+    },
+    {
+      "name": "11 Footer",
+      "bg": "dark_navy",
+      "details": "Minimalist. 'AUREXA / THE ART OF THE EXCEPTIONAL'. Thin champagne line. Sophisticated final reveal."
+    }
+  ],
+  "image_urls": {
+    "hero_and_collection": [
+      {
+        "url": "https://images.unsplash.com/photo-1700144387984-44122b36998c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHwxfHxjbGFzc2ljYWwlMjBvaWwlMjBwYWludGluZ3xlbnwwfHx8fDE3ODYxMTkzOTd8MA&ixlib=rb-4.1.0&q=85",
+        "category": "Hero / Painting",
+        "description": "Classical oil painting, group of people"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1583934583792-262536fa7003?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzF8MHwxfHNlYXJjaHw0fHxjbGFzc2ljYWwlMjBvaWwlMjBwYWludGluZ3xlbnwwfHx8fDE3ODYxMTkzOTd8MA&ixlib=rb-4.1.0&q=85",
+        "category": "Collection / Painting",
+        "description": "Woman in blue dress classical painting"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1613957871189-f6165548ae02?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwzfHxtYXJibGUlMjBzY3VscHR1cmUlMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc4NjExOTM5N3ww&ixlib=rb-4.1.0&q=85",
+        "category": "Collection / Marble",
+        "description": "Gray concrete statue close up"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1593494193844-c2bd6b1a0e16?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxtYXJibGUlMjBzY3VscHR1cmUlMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc4NjExOTM5N3ww&ixlib=rb-4.1.0&q=85",
+        "category": "Collection / Marble details",
+        "description": "Marble sculpture hands/feet detail"
+      }
+    ],
+    "artifacts_and_antiquities": [
+      {
+        "url": "https://images.unsplash.com/photo-1779497698182-2316ce352f94?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxhbnRpcXVlJTIwYnJvbnplJTIwYXJ0aWZhY3R8ZW58MHx8fHwxNzg2MTE5Mzk3fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Auction / Lots",
+        "description": "Ancient gold and bronze mask artifact"
+      },
+      {
+        "url": "https://images.pexels.com/photos/35226355/pexels-photo-35226355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "Featured Lots",
+        "description": "Intricate bronze artifact detail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1771845220856-8c5fc1c3e93d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxhbnRpcXVlJTIwYnJvbnplJTIwYXJ0aWZhY3R8ZW58MHx8fHwxNzg2MTE5Mzk3fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Auction / Lots",
+        "description": "Bronze statue shadow"
+      }
+    ],
+    "museum_and_editorial": [
+      {
+        "url": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxkYXJrJTIwbXVzZXVtJTIwZ2FsbGVyeSUyMGludGVyaW9yfGVufDB8fHx8MTc4NjExOTM5OHww&ixlib=rb-4.1.0&q=85",
+        "category": "AUREXA I / Gallery",
+        "description": "Dark museum gallery interior with frames"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1621886292650-520f76c747d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwzfHxkYXJrJTIwbXVzZXVtJTIwZ2FsbGVyeSUyMGludGVyaW9yfGVufDB8fHx8MTc4NjExOTM5OHww&ixlib=rb-4.1.0&q=85",
+        "category": "The Experience / Museum",
+        "description": "Grand gallery room architecture"
+      }
+    ],
+    "textures": [
+      {
+        "url": "https://images.unsplash.com/photo-1616410731303-6affae095a0a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxhZ2VkJTIwaXZvcnklMjBwYXBlciUyMHRleHR1cmV8ZW58MHx8fHwxNzg2MTE5Mzk3fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Background Texture",
+        "description": "Aged ivory paper texture"
+      }
+    ]
+  },
+  "universal_guidelines_for_main_agent": [
+    "DO NOT use generic centered layouts or simplistic UI. Build a cinematic, high-end editorial experience.",
+    "ALL interactive elements (buttons, links, forms) MUST have data-testid attributes (e.g., data-testid='request-invite-btn').",
+    "Use framer-motion extensively but tastefully for scroll reveals, text masking, and image reveals.",
+    "Install and integrate @studio-freight/lenis for smooth scrolling.",
+    "Install gsap and @gsap/react for the pinned horizontal scroll section (02 THE COLLECTION).",
+    "Never use completely transparent backgrounds for overlapping text, but you can rely on the dark navy or ivory bases.",
+    "Limit component library usage; build custom HTML + Tailwind for complex editorial layouts to break the 'SaaS' mold.",
+    "DO NOT use 3D, WebGL, or Canvas. Only use 2D transitions (clip-path wipes, transform, opacity).",
+    "Ensure all text remains accessible and elegant. Keep leading-tight on big headings, and tracking-widest on uppercase small metadata.",
+    "Forms in the 'Access' section should use minimalist bottom borders (border-b border-champagne_accent) rather than full bordered boxes."
+  ]
+}

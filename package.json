@@ -1,0 +1,23 @@
+{
+  "name": "aurexa-mern-stack",
+  "version": "1.0.0",
+  "description": "AUREXA — Luxury Art Exhibition & Auction full MERN Stack application",
+  "scripts": {
+    "dev:backend": "cd backend && npm start",
+    "dev:frontend": "cd frontend && npm start",
+    "build:frontend": "cd frontend && npm run build",
+    "install:all": "npm --prefix backend install && npm --prefix frontend install"
+  },
+  "keywords": [
+    "mern",
+    "mongodb",
+    "express",
+    "react",
+    "nodejs",
+    "vite",
+    "typescript",
+    "tailwind"
+  ],
+  "author": "AUREXA",
+  "license": "ISC"
+}
