@@ -7,7 +7,7 @@ import { IMAGES } from "@/data/content";
 const LETTERS = "AUREXA".split("");
 
 export const Hero = () => {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);

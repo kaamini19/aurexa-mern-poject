@@ -86,12 +86,20 @@ export const Finale = () => (
       <div className="border-t border-ivory/10">
         <div className="mx-auto flex max-w-[1500px] flex-wrap items-center justify-between gap-4 px-6 py-6 md:px-12">
           <div className="flex gap-8">
-            <a href="#" onClick={(e) => e.preventDefault()} data-testid="footer-privacy"
-              className="text-[9px] uppercase tracking-[0.3em] text-ivory/35 transition-colors hover:text-ivory/70">
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              data-testid="footer-privacy"
+              className="text-[9px] uppercase tracking-[0.3em] text-ivory/35 transition-colors hover:text-ivory/70"
+            >
               Privacy
             </a>
-            <a href="#" onClick={(e) => e.preventDefault()} data-testid="footer-terms"
-              className="text-[9px] uppercase tracking-[0.3em] text-ivory/35 transition-colors hover:text-ivory/70">
+            <a
+              href="#"
+              onClick={(e) => e.preventDefault()}
+              data-testid="footer-terms"
+              className="text-[9px] uppercase tracking-[0.3em] text-ivory/35 transition-colors hover:text-ivory/70"
+            >
               Terms
             </a>
           </div>

@@ -1,4 +1,4 @@
-const u = (id: string, w = 1600) =>
+const u = (id, w = 1600) =>
   `https://images.unsplash.com/${id}?q=80&w=${w}&auto=format&fit=crop`;
 
 export const IMAGES = {
@@ -6,16 +6,7 @@ export const IMAGES = {
   paper: u("photo-1616410731303-6affae095a0a", 1400),
 };
 
-export type CollectionItem = {
-  title: string;
-  origin: string;
-  period: string;
-  medium: string;
-  category: string;
-  img: string;
-};
-
-export const COLLECTION: CollectionItem[] = [
+export const COLLECTION = [
   { title: "The Departure of the Argonauts", origin: "Circle of Giovanni Paolo Panini", period: "c. 1730", medium: "Oil on canvas", category: "Paintings", img: u("photo-1578301978162-7aae4d755744") },
   { title: "Venus at her Toilet", origin: "Italian School", period: "Late 18th Century", medium: "Carrara marble", category: "Marble & Sculpture", img: u("photo-1685062478366-907bf61feee0") },
   { title: "Funerary Mask of a General", origin: "Roman Imperial", period: "2nd Century AD", medium: "Gilt bronze", category: "Antiquities", img: u("photo-1779497698182-2316ce352f94") },
@@ -35,17 +26,7 @@ export const CATEGORIES = [
   { name: "Rare Objects", count: "11 Works" },
 ];
 
-export type Lot = {
-  no: string;
-  title: string;
-  origin: string;
-  period: string;
-  medium: string;
-  estimate: string;
-  img: string;
-};
-
-export const LOTS: Lot[] = [
+export const LOTS = [
   { no: "01", title: "The Penitent Magdalene", origin: "Follower of Guido Reni", period: "c. 1640", medium: "Oil on canvas", estimate: "€1,200,000 – 1,800,000", img: u("photo-1556005693-00fff02f134c") },
   { no: "02", title: "Standing Draped Figure", origin: "Italian, early 19th Century", period: "c. 1810", medium: "Statuary marble", estimate: "€380,000 – 520,000", img: u("photo-1662808141421-54240cbfd45f") },
   { no: "03", title: "Still Life with Peonies", origin: "Dutch School, 17th Century", period: "c. 1675", medium: "Oil on oak", estimate: "€460,000 – 700,000", img: u("photo-1700213396551-48c119a84c8e") },
@@ -63,15 +44,7 @@ export const EDITION_ONE = [
 
 export const EDITION_TWO_IMG = u("photo-1627922155847-bd3df93573f8", 1400);
 
-export type Article = {
-  title: string;
-  category: string;
-  date: string;
-  excerpt: string;
-  img: string;
-};
-
-export const ARTICLES: Article[] = [
+export const ARTICLES = [
   {
     title: "The Language of Objects",
     category: "On Connoisseurship",
@@ -109,7 +82,7 @@ export const ARTICLES: Article[] = [
   },
 ];
 
-export const PARTNERS: { tier: string; names: string[] }[] = [
+export const PARTNERS = [
   { tier: "Presenting Partner", names: ["Maison Verlaine"] },
   { tier: "Luxury Partners", names: ["Banque Héritage", "Maison Ardoise", "Hôtel Particulier"] },
   { tier: "Cultural Partners", names: ["Fondazione Belle Arti", "The Antiquarian Society", "Institut du Patrimoine"] },

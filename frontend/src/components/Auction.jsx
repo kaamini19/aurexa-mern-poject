@@ -5,7 +5,7 @@ import { Eyebrow, FadeUp, TextReveal } from "./reveal";
 import { scrollToId } from "@/lib/scroll";
 
 const TARGET = new Date("2026-10-15T19:00:00+02:00").getTime();
-const pad = (n: number) => String(Math.max(0, n)).padStart(2, "0");
+const pad = (n) => String(Math.max(0, n)).padStart(2, "0");
 
 const Countdown = () => {
   const [t, setT] = useState(() => Math.max(0, TARGET - Date.now()));

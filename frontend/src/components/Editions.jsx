@@ -6,7 +6,7 @@ import { Eyebrow, FadeUp, ImageReveal, SectionVeil, TextReveal } from "./reveal"
 import { scrollToId } from "@/lib/scroll";
 
 const AurexaOne = () => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const yA = useTransform(scrollYProgress, [0, 1], [70, -70]);
   const yB = useTransform(scrollYProgress, [0, 1], [130, -110]);

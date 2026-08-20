@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
-import type { ReactNode } from "react";
 
-export const EASE = [0.16, 1, 0.3, 1] as const;
+export const EASE = [0.16, 1, 0.3, 1];
 
-const VIEWPORT = { once: true, margin: "-10% 0px" } as const;
+const VIEWPORT = { once: true, margin: "-10% 0px" };
 
 export const TextReveal = ({
   lines,
@@ -11,12 +10,6 @@ export const TextReveal = ({
   lineClassName = "",
   delay = 0,
   stagger = 0.1,
-}: {
-  lines: string[];
-  className?: string;
-  lineClassName?: string;
-  delay?: number;
-  stagger?: number;
 }) => (
   <motion.span className={`block ${className}`} initial="hidden" whileInView="show" viewport={VIEWPORT}>
     {lines.map((line, i) => (
@@ -44,11 +37,6 @@ export const FadeUp = ({
   className = "",
   delay = 0,
   y = 30,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
-  y?: number;
 }) => (
   <motion.div
     className={className}
@@ -70,15 +58,6 @@ export const ImageReveal = ({
   veil = "#0B1728",
   delay = 0,
   eager = false,
-}: {
-  src: string;
-  alt: string;
-  className?: string;
-  imgClassName?: string;
-  variant?: "clip" | "curtain";
-  veil?: string;
-  delay?: number;
-  eager?: boolean;
 }) => (
   <div className={`relative overflow-hidden ${className}`}>
     <motion.img
@@ -120,10 +99,6 @@ export const LightSweep = ({
   children,
   className = "",
   delay = 0,
-}: {
-  children: ReactNode;
-  className?: string;
-  delay?: number;
 }) => (
   <motion.span
     className={`relative inline-block overflow-hidden ${className}`}
@@ -143,7 +118,7 @@ export const LightSweep = ({
   </motion.span>
 );
 
-export const SectionVeil = ({ color }: { color: string }) => (
+export const SectionVeil = ({ color }) => (
   <motion.div
     aria-hidden
     className="pointer-events-none absolute inset-0 z-40"
@@ -160,11 +135,6 @@ export const Eyebrow = ({
   label,
   tone = "champagne",
   className = "",
-}: {
-  index: string;
-  label: string;
-  tone?: "champagne" | "bronze";
-  className?: string;
 }) => (
   <FadeUp className={`flex items-center gap-4 ${className}`} y={16}>
     <span

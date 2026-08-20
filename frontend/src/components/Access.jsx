@@ -9,7 +9,7 @@ const inputCls =
   "w-full border-b border-ivory/25 bg-transparent py-3 text-sm tracking-[0.15em] text-ivory placeholder:text-ivory/30 focus:border-champagne focus:outline-none transition-colors duration-500 disabled:opacity-50";
 const labelCls = "mb-1 block text-[9px] uppercase tracking-[0.4em] text-ivory/45";
 
-const Granted = ({ tier, holder }: { tier?: string; holder?: string }) => (
+const Granted = ({ tier, holder }) => (
   <motion.div
     data-testid="invitation-granted"
     initial={{ opacity: 0, y: 24 }}
@@ -30,7 +30,7 @@ const Granted = ({ tier, holder }: { tier?: string; holder?: string }) => (
   </motion.div>
 );
 
-const Received = ({ name }: { name?: string }) => (
+const Received = ({ name }) => (
   <motion.div
     data-testid="request-received"
     initial={{ opacity: 0, y: 24 }}
@@ -52,7 +52,7 @@ export const Access = () => {
   const [code, setCode] = useState("");
   const [codeLoading, setCodeLoading] = useState(false);
   const [codeError, setCodeError] = useState("");
-  const [grantInfo, setGrantInfo] = useState<{ granted: boolean; tier?: string; holder?: string }>({
+  const [grantInfo, setGrantInfo] = useState({
     granted: false,
   });
 
@@ -68,7 +68,7 @@ export const Access = () => {
     message: "",
   });
 
-  const handleVerifyCode = async (e: React.FormEvent) => {
+  const handleVerifyCode = async (e) => {
     e.preventDefault();
     if (!code.trim()) return;
 
@@ -82,14 +82,14 @@ export const Access = () => {
       } else {
         setCodeError(res.message || "Invalid invitation code. Please check your invitation card.");
       }
-    } catch (err: any) {
+    } catch (err) {
       setGrantInfo({ granted: true });
     } finally {
       setCodeLoading(false);
     }
   };
 
-  const handleRequestSubmit = async (e: React.FormEvent) => {
+  const handleRequestSubmit = async (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim()) return;
 

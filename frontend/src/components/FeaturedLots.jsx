@@ -5,7 +5,7 @@ import { LOTS } from "@/data/content";
 import { Eyebrow, FadeUp, ImageReveal, SectionVeil, TextReveal } from "./reveal";
 
 export const FeaturedLots = () => {
-  const areaRef = useRef<HTMLDivElement>(null);
+  const areaRef = useRef(null);
   const [viewing, setViewing] = useState(false);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);

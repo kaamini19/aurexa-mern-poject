@@ -29,7 +29,7 @@ export const Navbar = () => {
     };
   }, [open]);
 
-  const go = (id: string) => {
+  const go = (id) => {
     setOpen(false);
     setTimeout(() => scrollToId(id), open ? 350 : 0);
   };

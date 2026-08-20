@@ -1,12 +1,10 @@
-import Lenis from "lenis";
+let lenis = null;
 
-let lenis: Lenis | null = null;
-
-export const setLenis = (instance: Lenis | null) => {
+export const setLenis = (instance) => {
   lenis = instance;
 };
 
-export const scrollToId = (id: string) => {
+export const scrollToId = (id) => {
   const el = document.getElementById(id);
   if (!el) return;
   if (lenis) {

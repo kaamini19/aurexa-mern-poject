@@ -8,20 +8,22 @@ gsap.registerPlugin(ScrollTrigger);
 const TOTAL = COLLECTION.length;
 
 export const HorizontalGallery = () => {
-  const wrapRef = useRef<HTMLDivElement>(null);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const wrapRef = useRef(null);
+  const trackRef = useRef(null);
   const [index, setIndex] = useState(1);
 
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
     mm.add("(min-width: 768px)", () => {
-      const track = trackRef.current!;
+      const track = trackRef.current;
+      if (!track || !wrapRef.current) return;
+
       const getAmount = () => track.scrollWidth - window.innerWidth;
       const tween = gsap.to(track, {
         x: () => -getAmount(),
         ease: "none",
         scrollTrigger: {
-          trigger: wrapRef.current!,
+          trigger: wrapRef.current,
           start: "top top",
           end: () => `+=${getAmount()}`,
           pin: true,

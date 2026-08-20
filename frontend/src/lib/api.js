@@ -9,35 +9,11 @@ const API_BASE_URL =
     ? `${import.meta.env.REACT_APP_BACKEND_URL}/api`
     : 'http://localhost:5000/api');
 
-export interface InvitationRequestPayload {
-  name: string;
-  email: string;
-  phone?: string;
-  city?: string;
-  interest?: string;
-  message?: string;
-}
-
-export interface InvitationResponse {
-  success: boolean;
-  message: string;
-  data?: any;
-  error?: string;
-}
-
-export interface VerifyCodeResponse {
-  success: boolean;
-  valid: boolean;
-  tier?: string;
-  holder?: string;
-  message?: string;
-}
-
 export const api = {
   /**
    * Submit an invitation request to the house
    */
-  async submitInvitationRequest(payload: InvitationRequestPayload): Promise<InvitationResponse> {
+  async submitInvitationRequest(payload) {
     try {
       const res = await fetch(`${API_BASE_URL}/invitations/request`, {
         method: 'POST',
@@ -51,7 +27,7 @@ export const api = {
       }
 
       return await res.json();
-    } catch (err: any) {
+    } catch (err) {
       console.warn('[API Warning] Live backend unreachable or returned error, using seamless fallback:', err.message);
       // Fallback for seamless offline UX
       return {
@@ -65,7 +41,7 @@ export const api = {
   /**
    * Verify an invitation code for entry
    */
-  async verifyInvitationCode(code: string): Promise<VerifyCodeResponse> {
+  async verifyInvitationCode(code) {
     try {
       const res = await fetch(`${API_BASE_URL}/invitations/verify`, {
         method: 'POST',
@@ -83,7 +59,7 @@ export const api = {
       }
 
       return await res.json();
-    } catch (err: any) {
+    } catch (err) {
       console.warn('[API Warning] Live backend unreachable, falling back to client validation:', err.message);
       const clean = code.trim().toUpperCase();
       const isValid = clean.length >= 4;
