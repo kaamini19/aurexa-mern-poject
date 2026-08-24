@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { scrollToId } from "@/lib/scroll";
 import { EASE, LightSweep } from "./reveal";
 import { IMAGES } from "@/data/content";
 
@@ -56,15 +55,6 @@ export const Hero = () => {
         style={{ opacity: fade }}
         className="relative z-30 flex h-full flex-col items-center justify-center px-6 text-center"
       >
-        <motion.p
-          initial={{ opacity: 0, y: 18 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 1.25 }}
-          className="mb-6 text-[10px] uppercase tracking-[0.5em] text-champagne md:text-[11px]"
-        >
-          Private Exhibition &amp; Auction
-        </motion.p>
-
         <LightSweep delay={2.2}>
           <h1 className="font-serif text-[17vw] font-light leading-[0.95] tracking-[0.1em] text-ivory md:text-[12vw]">
             {LETTERS.map((l, i) => (
@@ -95,38 +85,8 @@ export const Hero = () => {
           transition={{ duration: 0.9, ease: EASE, delay: 2 }}
           className="mt-6 text-[11px] uppercase tracking-[0.55em] text-ivory/85 md:text-xs"
         >
-          The Art of the Exceptional
+          The World Beyond the Ordinary
         </motion.p>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 2.2 }}
-          className="mt-3 text-[10px] uppercase tracking-[0.4em] text-ivory/45"
-        >
-          MMXXVI — By Invitation Only
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE, delay: 2.4 }}
-          className="mt-12 flex flex-col items-center gap-6 sm:flex-row sm:gap-10"
-        >
-          <button
-            data-testid="hero-enter-collection-btn"
-            onClick={() => scrollToId("collection")}
-            className="border border-ivory/30 px-9 py-4 text-[10px] uppercase tracking-[0.35em] text-ivory transition-colors duration-500 hover:bg-ivory hover:text-ink"
-          >
-            Enter the Collection
-          </button>
-          <button
-            data-testid="hero-request-invitation-btn"
-            onClick={() => scrollToId("access")}
-            className="text-[10px] uppercase tracking-[0.35em] text-ivory/70 underline decoration-champagne/50 underline-offset-8 transition-colors duration-300 hover:text-ivory hover:decoration-champagne"
-          >
-            Request Invitation
-          </button>
-        </motion.div>
       </motion.div>
 
       <motion.div

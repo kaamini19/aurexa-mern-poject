@@ -4,7 +4,7 @@ import { scrollToId } from "@/lib/scroll";
 import { EASE } from "./reveal";
 
 const LINKS = [
-  { label: "Collection", id: "collection" },
+  { label: "About", id: "collection" },
   { label: "Exhibition", id: "exhibition" },
   { label: "Auction", id: "auction" },
   { label: "Experience", id: "experience" },
@@ -45,13 +45,7 @@ export const Navbar = () => {
         }`}
       >
         <div className="flex items-center justify-between px-6 md:px-12">
-          <button
-            data-testid="nav-logo"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-serif text-lg font-medium tracking-[0.4em] text-ivory"
-          >
-            AUREXA
-          </button>
+          <div className="w-20" aria-hidden />
 
           <nav className="hidden items-center gap-8 lg:flex">
             {LINKS.map((l) => (
@@ -66,14 +60,7 @@ export const Navbar = () => {
             ))}
           </nav>
 
-          <div className="flex items-center gap-6">
-            <button
-              data-testid="nav-access-btn"
-              onClick={() => go("access")}
-              className="border border-current px-5 py-2 text-[10px] uppercase tracking-[0.35em] text-ivory transition-colors duration-300 hover:bg-ivory hover:text-ink"
-            >
-              Access
-            </button>
+          <div className="flex items-center justify-end lg:w-20">
             <button
               data-testid="nav-menu-btn"
               onClick={() => setOpen(true)}

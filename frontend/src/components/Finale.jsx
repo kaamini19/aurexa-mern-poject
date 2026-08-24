@@ -4,7 +4,7 @@ import { scrollToId } from "@/lib/scroll";
 import { EASE, FadeUp, TextReveal } from "./reveal";
 
 const NAV = [
-  { label: "Collection", id: "collection" },
+  { label: "About", id: "collection" },
   { label: "Exhibition", id: "exhibition" },
   { label: "Auction", id: "auction" },
   { label: "Journal", id: "journal" },
@@ -32,7 +32,7 @@ export const Finale = () => (
       />
       <FadeUp delay={0.5}>
         <p className="mt-8 text-[10px] uppercase tracking-[0.55em] text-champagne">
-          The Art of the Exceptional
+          The World Beyond the Ordinary
         </p>
         <p className="mt-14 font-serif text-3xl font-light italic text-ivory/85 md:text-4xl">
           You are invited.
@@ -104,7 +104,7 @@ export const Finale = () => (
             </a>
           </div>
           <p className="text-[9px] uppercase tracking-[0.3em] text-ivory/35">
-            © MMXXVI Aurexa — The Art of the Exceptional
+            © MMXXVI Aurexa — The World Beyond the Ordinary
           </p>
         </div>
       </div>
