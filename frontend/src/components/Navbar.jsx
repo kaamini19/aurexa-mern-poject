@@ -5,6 +5,7 @@ import { EASE } from "./reveal";
 
 const LINKS = [
   { label: "About", id: "collection" },
+  { label: "Glimpse", id: "glimpse" },
   { label: "Exhibition", id: "exhibition" },
   { label: "Auction", id: "auction" },
   { label: "Experience", id: "experience" },

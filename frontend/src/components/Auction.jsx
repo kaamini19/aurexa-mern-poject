@@ -45,7 +45,7 @@ const Countdown = () => {
 export const Auction = () => (
   <section id="auction" data-testid="auction-section" className="relative bg-navy text-ivory">
     <div className="mx-auto max-w-[1500px] px-6 py-28 md:px-12 md:py-40">
-      <Eyebrow index="03" label="The Rostrum" />
+      <Eyebrow index="04" label="The Rostrum" />
       <div className="mt-8 grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <h2>

@@ -111,7 +111,7 @@ export const Access = () => {
     <section id="access" data-testid="access-section" className="relative overflow-hidden bg-ink text-ivory">
       <SectionVeil color="#F3EDE2" />
       <div className="mx-auto max-w-[1500px] px-6 py-28 md:px-12 md:py-40">
-        <Eyebrow index="09" label="Private Access" />
+        <Eyebrow index="10" label="Private Access" />
         <div className="mt-8 max-w-3xl">
           <h2>
             <TextReveal

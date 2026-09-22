@@ -7,6 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Marquee } from "@/components/Marquee";
 import { Collection } from "@/components/Collection";
+import { Glimpse } from "@/components/Glimpse";
 import { FeaturedLots } from "@/components/FeaturedLots";
 import { Auction } from "@/components/Auction";
 import { Editions } from "@/components/Editions";
@@ -47,6 +48,7 @@ export default function App() {
         <Hero />
         <Marquee />
         <Collection />
+        <Glimpse />
         <FeaturedLots />
         <Auction />
         <Editions />

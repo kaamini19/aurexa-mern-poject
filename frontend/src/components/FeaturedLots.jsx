@@ -14,9 +14,8 @@ export const FeaturedLots = () => {
 
   return (
     <section data-testid="featured-lots-section" className="relative overflow-hidden bg-ink text-ivory">
-      <SectionVeil color="#F3EDE2" />
       <div className="mx-auto max-w-[1500px] px-6 py-28 md:px-12 md:py-40">
-        <Eyebrow index="02" label="Selected Lots" />
+        <Eyebrow index="03" label="Selected Lots" />
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
           <h2>
             <TextReveal

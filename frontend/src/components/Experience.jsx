@@ -26,7 +26,7 @@ const CHAPTERS = [
 export const Experience = () => (
   <section id="experience" data-testid="experience-section" className="relative bg-beige text-ink">
     <div className="mx-auto max-w-[1500px] px-6 py-28 md:px-12 md:py-40">
-      <Eyebrow index="06" label="The Experience" tone="bronze" />
+      <Eyebrow index="07" label="The Experience" tone="bronze" />
       <h2 className="mt-8 max-w-3xl">
         <TextReveal
           lines={["Not an event.", "A private room."]}

@@ -7,7 +7,7 @@ export const Journal = () => {
   return (
     <section id="journal" data-testid="journal-section" className="relative bg-ivory text-ink">
       <div className="mx-auto max-w-[1500px] border-t border-ink/10 px-6 py-28 md:px-12 md:py-40">
-        <Eyebrow index="08" label="Essays & Notes" tone="bronze" />
+        <Eyebrow index="09" label="Essays & Notes" tone="bronze" />
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
           <h2>
             <TextReveal

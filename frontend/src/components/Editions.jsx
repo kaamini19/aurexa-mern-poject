@@ -22,7 +22,7 @@ const AurexaOne = () => {
   return (
     <div className="relative overflow-hidden bg-ink py-28 text-ivory md:py-40">
       <div className="mx-auto max-w-[1500px] px-6 md:px-12">
-        <Eyebrow index="04" label="The First Chapter" />
+        <Eyebrow index="05" label="The First Chapter" />
         <div className="mt-8 flex flex-wrap items-end justify-between gap-8">
           <h2>
             <TextReveal
@@ -87,7 +87,7 @@ const AurexaTwo = () => (
     <SectionVeil color="#07101D" />
     <div className="mx-auto grid max-w-[1500px] items-center gap-16 px-6 md:px-12 lg:grid-cols-12">
       <div className="lg:col-span-7">
-        <Eyebrow index="05" label="The Collection Returns" tone="bronze" />
+        <Eyebrow index="06" label="The Collection Returns" tone="bronze" />
         <h2 className="mt-8">
           <TextReveal
             lines={["AUREXA II"]}

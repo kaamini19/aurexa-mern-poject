@@ -4,7 +4,7 @@ import { Eyebrow, FadeUp, TextReveal } from "./reveal";
 export const Partners = () => (
   <section data-testid="partners-section" className="relative bg-ivory text-ink">
     <div className="mx-auto max-w-[1500px] px-6 py-28 md:px-12 md:py-40">
-      <Eyebrow index="07" label="In Association" tone="bronze" />
+      <Eyebrow index="08" label="In Association" tone="bronze" />
       <h2 className="mt-8">
         <TextReveal
           lines={["PARTNERS OF AUREXA"]}
