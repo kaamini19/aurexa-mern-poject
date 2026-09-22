@@ -24,66 +24,58 @@ export const Glimpse = () => {
       {/* Ambient Lighting Gradients */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(185,154,104,0.07)_0%,transparent_70%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(185,154,104,0.08)_0%,transparent_70%)]"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-12">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center">
-          <Eyebrow index="02" label="Visual Journey" tone="champagne" className="justify-center" />
+      {/* Header Container */}
+      <div className="relative mx-auto max-w-5xl px-6 md:px-12 text-center">
+        <Eyebrow index="02" label="Visual Journey" tone="champagne" className="justify-center" />
 
-          <h2 className="mt-8 mb-4">
-            <LightSweep>
-              <TextReveal
-                lines={["THE INFINITE GLIMPSE"]}
-                lineClassName="font-serif text-4xl font-light tracking-[0.18em] text-ivory sm:text-6xl md:text-7xl"
-              />
-            </LightSweep>
-          </h2>
+        <h2 className="mt-8 mb-4">
+          <LightSweep>
+            <TextReveal
+              lines={["THE INFINITE GLIMPSE"]}
+              lineClassName="font-serif text-4xl font-light tracking-[0.18em] text-ivory sm:text-6xl md:text-7xl"
+            />
+          </LightSweep>
+        </h2>
 
-          {/* Golden Divider */}
-          <div className="mb-6 flex items-center justify-center gap-3">
-            <span className="h-px w-16 bg-gradient-to-r from-transparent to-champagne/60" />
-            <span className="h-1.5 w-1.5 rotate-45 bg-champagne/80" />
-            <span className="h-px w-16 bg-gradient-to-l from-transparent to-champagne/60" />
-          </div>
-
-          <FadeUp delay={0.2} y={16} className="max-w-2xl">
-            <p className="text-sm md:text-base font-light text-ivory/70 leading-relaxed">
-              Step through a suspended 3D continuum of moments and perspectives.
-            </p>
-          </FadeUp>
+        {/* Golden Divider */}
+        <div className="mb-6 flex items-center justify-center gap-3">
+          <span className="h-px w-16 bg-gradient-to-r from-transparent to-champagne/60" />
+          <span className="h-1.5 w-1.5 rotate-45 bg-champagne/80" />
+          <span className="h-px w-16 bg-gradient-to-l from-transparent to-champagne/60" />
         </div>
 
-        {/* 3D Infinite Spiral Viewport Container */}
+        <FadeUp delay={0.2} y={16} className="max-w-2xl mx-auto">
+          <p className="text-sm md:text-base font-light text-ivory/70 leading-relaxed">
+            Step through a suspended 3D continuum of moments and perspectives.
+          </p>
+        </FadeUp>
+      </div>
+
+      {/* Broad 3D Exhibition Stage (88–92vw width) */}
+      <div className="relative mx-auto w-[90vw] max-w-[1750px] px-2 sm:px-4">
         <FadeUp delay={0.3} y={24} className="mt-8 md:mt-12">
-          {/* Main Spiral Container with User's Exact Props */}
           <div
-            style={{
-              height: "600px",
-              position: "relative",
-              overflow: "hidden",
-            }}
+            className="relative w-full h-[620px] md:h-[690px] lg:h-[730px] rounded-3xl border border-champagne/10 bg-gradient-to-b from-navy/30 via-ink/60 to-navy/30 backdrop-blur-[2px] overflow-hidden"
           >
             <InfiniteSpiral
               items={images}
-              animationMode="all"
-              speed={0.55}
-              radius={170}
-              cardWidth={100}
-              cardHeight={100}
-              verticalSpacing={60}
-              perspective={1000}
-              cardRadius={10}
-              centerScale={1.2}
-              edgeBlur={6}
-              cardsPerTurn={7}
+              speed={0.48}
+              cardWidth={210}
+              cardHeight={280}
+              perspective={1250}
+              cardRadius={14}
+              centerScale={1.22}
+              edgeBlur={7}
+              cardsPerTurn={8}
               pauseOnHover
               onCardClick={(item) => setActiveItem(item)}
             />
 
             {/* Interactive Floating Guide Badges */}
-            <div className="pointer-events-none absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 rounded-full border border-champagne/20 bg-ink/70 px-4 py-1.5 text-[10px] tracking-[0.25em] text-champagne/90 backdrop-blur-md uppercase">
+            <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 rounded-full border border-champagne/20 bg-ink/75 px-5 py-2 text-[10px] sm:text-xs tracking-[0.25em] text-champagne/90 backdrop-blur-md uppercase shadow-lg">
               <MoveVertical size={13} className="animate-pulse text-champagne" />
               <span>Drag to Rotate • Hover to Pause</span>
             </div>
@@ -93,7 +85,7 @@ export const Glimpse = () => {
         {/* Selected Artwork Preview Detail (if clicked) */}
         {activeItem && (
           <FadeUp delay={0.1} y={12} className="mt-8 flex justify-center">
-            <div className="inline-flex items-center gap-4 rounded-full border border-champagne/40 bg-navy/80 px-6 py-2.5 backdrop-blur-md">
+            <div className="inline-flex items-center gap-4 rounded-full border border-champagne/40 bg-navy/90 px-6 py-2.5 backdrop-blur-md shadow-xl">
               <Eye size={15} className="text-champagne" />
               <span className="text-xs uppercase tracking-[0.2em] text-ivory/90">
                 Viewing: <strong className="text-champagne font-normal">{activeItem.title || activeItem.alt}</strong>
