@@ -1,99 +1,122 @@
 /**
- * AUREXA API Client
- * Connects React frontend with the Express.js / Node.js + MongoDB backend.
+ * AUREXA Client Service (Frontend Standalone)
+ * Pure client-side service handling invitation verification, VIP requests, and inquiries.
  */
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.REACT_APP_BACKEND_URL
-    ? `${import.meta.env.REACT_APP_BACKEND_URL}/api`
-    : 'http://localhost:5000/api');
+import { LOTS } from "../data/content.js";
+
+const delay = (ms = 350) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Known VIP Passes
+const VIP_TIER_MAP = {
+  "AUREXA": { tier: "Patron", holder: "Distinguished Guest" },
+  "AUREXA2026": { tier: "Curator's Circle", holder: "Distinguished Guest" },
+  "VIP-PALAZZO": { tier: "Honorary Patron", holder: "Palazzo Guest" },
+  "CONNOISSEUR": { tier: "Grand Connoisseur", holder: "Private Collector" },
+  "AUREXA-II-0000": { tier: "Founding Patron", holder: "House Benefactor" },
+};
 
 export const api = {
   /**
-   * Submit an invitation request to the house
+   * Submit an invitation request to the house (Client-side persisted)
    */
   async submitInvitationRequest(payload) {
-    try {
-      const res = await fetch(`${API_BASE_URL}/invitations/request`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+    await delay(400);
 
-      if (!res.ok) {
-        const errorData = await res.json().catch(() => ({}));
-        throw new Error(errorData.message || `Request failed with status ${res.status}`);
-      }
-
-      return await res.json();
-    } catch (err) {
-      console.warn('[API Warning] Live backend unreachable or returned error, using seamless fallback:', err.message);
-      // Fallback for seamless offline UX
-      return {
-        success: true,
-        message: 'The house will consider your request.',
-        data: payload,
-      };
+    if (!payload.name || !payload.email) {
+      throw new Error("Name and email are required to request an invitation.");
     }
+
+    const newRequest = {
+      id: "req_" + Date.now(),
+      ...payload,
+      status: "received",
+      submittedAt: new Date().toISOString(),
+    };
+
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
+        const existing = JSON.parse(localStorage.getItem("aurexa_invitation_requests") || "[]");
+        existing.unshift(newRequest);
+        localStorage.setItem("aurexa_invitation_requests", JSON.stringify(existing.slice(0, 50)));
+      }
+    } catch {
+      // Ignore storage errors in restricted environments
+    }
+
+    return {
+      success: true,
+      message: "Invitation request received by the house. We will respond within seven days.",
+      data: newRequest,
+    };
   },
 
   /**
-   * Verify an invitation code for entry
+   * Verify an invitation code for private gallery admission
    */
   async verifyInvitationCode(code) {
-    try {
-      const res = await fetch(`${API_BASE_URL}/invitations/verify`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code }),
-      });
+    await delay(350);
 
-      if (!res.ok) {
-        const err = await res.json().catch(() => ({}));
-        return {
-          success: false,
-          valid: false,
-          message: err.message || 'Invalid or expired invitation code.',
-        };
-      }
+    const clean = (code || "").trim().toUpperCase();
 
-      return await res.json();
-    } catch (err) {
-      console.warn('[API Warning] Live backend unreachable, falling back to client validation:', err.message);
-      const clean = code.trim().toUpperCase();
-      const isValid = clean.length >= 4;
+    if (!clean || clean.length < 4) {
       return {
-        success: isValid,
-        valid: isValid,
-        tier: 'Patron',
-        message: isValid ? 'Welcome to the private rooms.' : 'Invalid code.',
+        success: false,
+        valid: false,
+        message: "Invalid or expired invitation code. Please check your invitation card.",
       };
     }
+
+    const matchedTier = VIP_TIER_MAP[clean] || {
+      tier: "Patron",
+      holder: "Distinguished Guest",
+    };
+
+    return {
+      success: true,
+      valid: true,
+      tier: matchedTier.tier,
+      holder: matchedTier.holder,
+      message: "Welcome to the private rooms of AUREXA II.",
+    };
   },
 
   /**
-   * Get Auction Lots from backend
+   * Get Auction Lots catalog
    */
   async getLots() {
-    try {
-      const res = await fetch(`${API_BASE_URL}/lots`);
-      if (!res.ok) throw new Error('Failed to fetch lots');
-      return await res.json();
-    } catch (err) {
-      return { success: false, data: [] };
-    }
+    await delay(100);
+    return {
+      success: true,
+      count: LOTS.length,
+      data: LOTS,
+    };
   },
 
   /**
-   * Check backend health
+   * Submit lot inquiry or absentee bid
+   */
+  async submitLotInquiry(lotId, inquiryData) {
+    await delay(350);
+    return {
+      success: true,
+      message: "Private inquiry lodged with the rostrum specialists.",
+      data: {
+        lotId,
+        ...inquiryData,
+        submittedAt: new Date().toISOString(),
+      },
+    };
+  },
+
+  /**
+   * System status check
    */
   async getStatus() {
-    try {
-      const res = await fetch(`${API_BASE_URL}`);
-      return await res.json();
-    } catch (err) {
-      return { status: 'offline' };
-    }
+    return {
+      status: "online",
+      mode: "standalone-frontend",
+      version: "2.0.0",
+    };
   },
 };
