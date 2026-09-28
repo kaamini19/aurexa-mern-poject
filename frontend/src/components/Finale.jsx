@@ -4,9 +4,12 @@ import { scrollToId } from "@/lib/scroll";
 import { EASE, FadeUp, TextReveal } from "./reveal";
 
 const NAV = [
-  { label: "About", id: "collection" },
-  { label: "Exhibition", id: "exhibition" },
+  { label: "About", id: "what-is-aurexa" },
+  { label: "Experience", id: "experience" },
+  { label: "Glimpse", id: "glimpse" },
   { label: "Auction", id: "auction" },
+  { label: "Gallery", id: "gallery" },
+  { label: "Details", id: "details" },
   { label: "Journal", id: "journal" },
   { label: "Access", id: "access" },
 ];

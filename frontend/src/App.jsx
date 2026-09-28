@@ -4,16 +4,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { setLenis } from "@/lib/scroll";
 import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
+
+// The 7 Primary Sections (in exact required order)
+import { Hero } from "@/components/Hero"; // 1. INTRODUCTION OF AUREXA
+import { WhatIsAurexa } from "@/components/WhatIsAurexa"; // 2. WHAT IS AUREXA
+import { Experience } from "@/components/Experience"; // 3. AUREXA EXPERIENCE
+import { Glimpse } from "@/components/Glimpse"; // 4. GLIMPSE OF AUREXA
+import { Auction } from "@/components/Auction"; // 5. UPCOMING EVENTS — LIVE AUCTION
+import { Gallery } from "@/components/Gallery"; // 6. ART & SCULPTURES — GALLERY
+import { ClosingDetails } from "@/components/ClosingDetails"; // 7. DETAILS — CLOSING SECTION
+
+// Preserved Existing Sections (Moved AFTER Section 7)
 import { Marquee } from "@/components/Marquee";
-import { Collection } from "@/components/Collection";
-import { Glimpse } from "@/components/Glimpse";
-import { FeaturedLots } from "@/components/FeaturedLots";
-import { Auction } from "@/components/Auction";
 import { Editions } from "@/components/Editions";
-import { Experience } from "@/components/Experience";
-import { Partners } from "@/components/Partners";
 import { Journal } from "@/components/Journal";
+import { Partners } from "@/components/Partners";
 import { Access } from "@/components/Access";
 import { Finale } from "@/components/Finale";
 
@@ -41,22 +46,49 @@ export default function App() {
   }, []);
 
   return (
-    <div className="bg-ink text-ivory" data-testid="aurexa-app">
+    <div className="bg-ink text-ivory selection:bg-champagne selection:text-ink min-h-screen" data-testid="aurexa-app">
       <div className="grain" aria-hidden />
       <Navbar />
+
       <main>
+        {/* ==================================================
+            7 PRIMARY SECTIONS (IN EXACT REQUIRED ORDER)
+            ================================================== */}
+        
+        {/* 1. INTRODUCTION OF AUREXA */}
         <Hero />
-        <Marquee />
-        <Collection />
-        <Glimpse />
-        <FeaturedLots />
-        <Auction />
-        <Editions />
+
+        {/* 2. WHAT IS AUREXA */}
+        <WhatIsAurexa />
+
+        {/* 3. AUREXA EXPERIENCE */}
         <Experience />
-        <Partners />
-        <Journal />
-        <Access />
+
+        {/* 4. GLIMPSE OF AUREXA */}
+        <Glimpse />
+
+        {/* 5. UPCOMING EVENTS — LIVE AUCTION */}
+        <Auction />
+
+        {/* 6. ART & SCULPTURES — GALLERY */}
+        <Gallery />
+
+        {/* 7. DETAILS — CLOSING SECTION */}
+        <ClosingDetails />
+
+        {/* ==================================================
+            PRESERVED SECONDARY SECTIONS (AFTER SECTION 7)
+            ================================================== */}
+        <div className="relative border-t border-champagne/15">
+          <Marquee />
+          <Editions />
+          <Journal />
+          <Partners />
+          <Access />
+        </div>
       </main>
+
+      {/* Global Minimal Footer */}
       <Finale />
     </div>
   );

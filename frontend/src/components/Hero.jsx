@@ -12,7 +12,7 @@ export const Hero = () => {
   const fade = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
 
   return (
-    <section ref={ref} data-testid="hero-section" className="relative h-[100svh] overflow-hidden bg-ink">
+    <section id="intro" ref={ref} data-testid="hero-section" className="relative h-[100svh] overflow-hidden bg-ink">
       <motion.div style={{ y: imgY }} className="absolute inset-0">
         <motion.img
           src={IMAGES.hero}
