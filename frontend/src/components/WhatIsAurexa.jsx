@@ -52,7 +52,7 @@ export const WhatIsAurexa = () => {
       />
 
       <div className="relative mx-auto max-w-5xl px-6 sm:px-8 md:px-12 flex flex-col items-center text-center">
-        <Eyebrow index="01" label="What Is Aurexa" tone="champagne" className="justify-center" />
+        <Eyebrow index="02" label="What Is Aurexa" tone="champagne" className="justify-center" />
 
         <h2 className="mt-8 mb-6">
           <LightSweep>

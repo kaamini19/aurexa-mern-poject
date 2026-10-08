@@ -10,14 +10,12 @@ const NAV = [
   { label: "Auction", id: "auction" },
   { label: "Gallery", id: "gallery" },
   { label: "Details", id: "details" },
-  { label: "Journal", id: "journal" },
-  { label: "Access", id: "access" },
 ];
 
 const SOCIAL = ["Instagram", "Vimeo", "LinkedIn"];
 
 export const Finale = () => (
-  <footer data-testid="footer" className="relative overflow-hidden bg-ink text-ivory">
+  <footer data-testid="footer" className="relative overflow-hidden bg-ink text-ivory border-t border-champagne/15">
     <div className="flex flex-col items-center px-6 pb-20 pt-32 text-center md:pt-44">
       <h2>
         <TextReveal
@@ -42,10 +40,10 @@ export const Finale = () => (
         </p>
         <button
           data-testid="finale-access-btn"
-          onClick={() => scrollToId("access")}
-          className="mt-10 inline-flex items-center gap-3 border border-ivory/25 px-9 py-4 text-[10px] uppercase tracking-[0.35em] transition-colors duration-500 hover:bg-ivory hover:text-ink"
+          onClick={() => scrollToId("details")}
+          className="mt-10 inline-flex items-center gap-3 border border-champagne bg-champagne/10 px-9 py-4 text-[10px] uppercase tracking-[0.35em] text-ivory transition-colors duration-500 hover:bg-champagne hover:text-ink"
         >
-          Access Aurexa <ArrowUpRight size={13} strokeWidth={1.5} />
+          Request Invitation <ArrowUpRight size={13} strokeWidth={1.5} />
         </button>
       </FadeUp>
     </div>
@@ -55,7 +53,7 @@ export const Finale = () => (
         <div>
           <p className="font-serif text-lg tracking-[0.4em]">AUREXA</p>
           <p className="mt-4 text-[10px] uppercase leading-relaxed tracking-[0.3em] text-ivory/40">
-            Private Exhibition &amp; Auction
+            Private Exhibition &amp; Live Auction
             <br />
             MMXXIV — MMXXVI
           </p>
@@ -66,7 +64,7 @@ export const Finale = () => (
               key={l.id}
               data-testid={`footer-link-${l.id}`}
               onClick={() => scrollToId(l.id)}
-              className="w-fit text-[10px] uppercase tracking-[0.35em] text-ivory/60 transition-colors duration-300 hover:text-champagne"
+              className="w-fit text-[10px] uppercase tracking-[0.35em] text-ivory/60 transition-colors duration-300 hover:text-champagne text-left"
             >
               {l.label}
             </button>
@@ -114,3 +112,5 @@ export const Finale = () => (
     </div>
   </footer>
 );
+
+export default Finale;

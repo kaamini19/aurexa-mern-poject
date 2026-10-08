@@ -10,8 +10,6 @@ const LINKS = [
   { label: "Auction", id: "auction" },
   { label: "Gallery", id: "gallery" },
   { label: "Details", id: "details" },
-  { label: "Journal", id: "journal" },
-  { label: "Access", id: "access" },
 ];
 
 export const Navbar = () => {
@@ -57,7 +55,7 @@ export const Navbar = () => {
             AUREXA
           </button>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation (Strictly pointing to the 7 sections) */}
           <nav className="hidden items-center gap-7 xl:gap-8 lg:flex">
             {LINKS.map((l) => (
               <button
@@ -74,7 +72,7 @@ export const Navbar = () => {
           {/* Right Action / Mobile Trigger */}
           <div className="flex items-center justify-end">
             <button
-              onClick={() => go("access")}
+              onClick={() => go("details")}
               className="hidden sm:inline-flex items-center border border-champagne/40 bg-champagne/10 px-4 py-1.5 text-[9px] uppercase tracking-[0.3em] text-champagne hover:bg-champagne hover:text-ink transition-all duration-300 mr-4 lg:mr-0"
             >
               Invitation
